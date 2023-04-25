@@ -1,0 +1,7 @@
+.main-layout{
+    display:grid;
+}
+
+li{
+    display:inline-block;
+}
