@@ -22,6 +22,7 @@ function getMeme() {
 
 function setImg(image) {
     gMeme.selectedImgId = image
+    console.log('gMeme.selectedImgId: ', gMeme.selectedImgId)
   }
 
 function setLineText(line) {

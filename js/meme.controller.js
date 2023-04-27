@@ -9,8 +9,8 @@ function renderMeme() {
     const gCtx = elCanvas.getContext('2d')
     const elImg = new Image()
     console.log('meme: ' , meme)
-    console.log('selected image id: ', meme.selectedImgId.url)
-    elImg.src = `/${meme.selectedImgId.url}`
+    console.log('selected image id: ', meme.selectedImgId)
+    elImg.src = `${meme.selectedImgId}`
     console.log(elImg.src)
     //elImg.txt = meme.txt
     elImg.onload = () => {

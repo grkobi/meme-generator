@@ -22,7 +22,7 @@ function onImgSelect(id) {
     const elSavedMemesContainer = document.querySelector('.saved-memes-container')
 
     const image = getImg(id)
-    setImg(image)
+    setImg(image.url)
     renderMeme()
 
     elEditorContainer.style.display = 'flex'
