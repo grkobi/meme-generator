@@ -57,3 +57,8 @@ function deleteLine() {
 function switchLines() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
 }
+
+
+function setImgId(imgId) {
+    gMeme.selectedImgId = imgId
+}

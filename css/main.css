@@ -1,7 +1,56 @@
-.main-layout{
-    display:grid;
+* {
+    box-sizing: border-box;
 }
 
-li{
-    display:inline-block;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lavender;
+    margin: 0;
+    /* height: 100vh; */
+    /* overflow-x: hidden; */
 }
+
+header {
+    grid-template-columns: 200px 2fr 200px;
+    height: 80px;
+    margin-block-end: 25px;
+    background: rgb(19, 159, 172);
+}
+
+.main-layout {
+    display: grid;
+}
+
+/* li {
+    display: inline-block;
+} */
+
+
+
+nav {
+    background: rgb(19, 159, 172);
+    grid-column: 2/3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(21, 23, 37);
+    width: 100%;
+    background-size: cover;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a{
+    margin: 15px;
+    font: inherit;
+    font-size: 20px;
+    font-family: inherit;
+    color: white;
+}
+
+/* .editor-container{
+    display:none
+} */

@@ -1,6 +1,7 @@
 'use strict'
 
 
+renderMeme()
 
 function renderMeme() {
     const meme = getMeme()
@@ -60,4 +61,4 @@ function onSwitchLines() {
 
 
 
-renderMeme()
+

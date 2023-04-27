@@ -1,8 +1,10 @@
 'use strict'
 
-var gKeywordSearchCountMap = { 'funny': 11, 'cat': 9, 'baby': 5 }
 
-var gImgs = [
+let gKeywordSearchCountMap = { 'funny': 11, 'cat': 9, 'baby': 5 }
+const gFilterBy = { search: '' }
+
+let gImgs = [
     { id: 1, url: 'img/1.jpg', keywords: [] },
     { id: 2, url: 'img/2.jpg', keywords: [] },
     { id: 3, url: 'img/3.jpg', keywords: [] },
@@ -22,4 +24,12 @@ var gImgs = [
     { id: 17, url: 'img/17.jpg', keywords: [] },
     { id: 18, url: 'img/18.jpg', keywords: [] },
 ]
+
+function getImgs() {
+    const imgs = gImgs
+    if (!gFilterBy.search) return imgs
+    let filteredImgs = gImgs.filter((img) => img.keywords.find(kw => kw.includes(gFilterBy.search)))
+    return filteredImgs
+
+}
 

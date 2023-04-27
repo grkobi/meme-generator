@@ -10,20 +10,28 @@
 </head>
 
 <body onload="onInit()">
-    <header class="main-layout">
-        <nav>
-            <h2>Meme Generator</h2>
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-link" onclick="onGalleryClick()">Gallery</a></li>
-                <li><a href="#" class="nav-link" onclick="onSavedClick()">Saved Memes</a></li>
-                <li><a href="#" class="nav-link" onclick="onAboutClick()">About</a></li>
-            </ul>
-        </nav>
-
-
+    <header class="grid">
+        <div class="container">
+            <nav class="main-nav">
+                <h2>Meme Generator</h2>
+                <ul class="nav-menu">
+                    <li onclick="onMoveGalleryPage()"><a class="active" href="index.html">Gallery</a></li>
+                    <li onclick="onRenderSavedMeme()"><a href="#">Saved Memes</a></li>
+                    <li><a class="about-container" href="#">About</a></li>
+                    <!-- <li><a href="#" class="nav-link" onclick="onGalleryClick()">Gallery</a></li>
+                    <li><a href="#" class="nav-link" onclick="onSavedClick()">Saved Memes</a></li>
+                    <li><a href="#" class="nav-link" onclick="onAboutClick()">About</a></li> -->
+                </ul>
+            </nav>
+        </div>
     </header>
+    <section class="gallery-container">
+
+
+    </section>
+    <section class="editor-container">
     <div>
-    <input type="text" class="input-text" placeholder="Enter your text here" onkeydown="onSetLineText(this,event)">
+        <input type="text" class="input-text" placeholder="Enter your text here" onkeydown="onSetLineText(this,event)">
         <button class="line-up" onclick="onMoveUp()">↑</button>
         <button class="line-down" onclick="onMoveDown()">↓</button>
         <button class="add-line" onclick="onAddLine()">new line</button>
@@ -31,6 +39,8 @@
         <button class="add-line" onclick="onSwitchLines()">switch line</button>
     </div>
     <canvas id="my-canvas" height="450" width="450"></canvas>
+
+</section>
     <script src="js/services/gallery.service.js"></script>
     <script src="js/services/meme.service.js"></script>
     <script src="js/gallery.controller.js"></script>
