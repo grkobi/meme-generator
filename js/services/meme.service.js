@@ -20,6 +20,10 @@ function getMeme() {
     return gMeme
 }
 
+function setImg(image) {
+    gMeme.selectedImgId = image
+  }
+
 function setLineText(line) {
     gMeme.lines[gMeme.selectedLineIdx].txt = line
 }

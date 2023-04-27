@@ -1,14 +1,17 @@
 'use strict'
 
 
-renderMeme()
+// renderMeme()
 
 function renderMeme() {
     const meme = getMeme()
     const elCanvas = document.querySelector('canvas')
     const gCtx = elCanvas.getContext('2d')
     const elImg = new Image()
-    elImg.src = `img/${meme.selectedImgId}.jpg`
+    console.log('meme: ' , meme)
+    console.log('selected image id: ', meme.selectedImgId.url)
+    elImg.src = `/${meme.selectedImgId.url}`
+    console.log(elImg.src)
     //elImg.txt = meme.txt
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, elCanvas.width, elCanvas.height)
