@@ -43,7 +43,7 @@ ul {
     list-style: none;
 }
 
-nav ul li a{
+nav ul li a {
     margin: 15px;
     font: inherit;
     font-size: 20px;
@@ -60,6 +60,30 @@ nav ul li a{
     border-radius: 1em;
 }
 
-.search-meme{
-    margin-block-end: 25px;
+.search-bar {
+    padding-left: 30px;
+}
+
+.search-meme {
+    border-radius: 10px;
+    height: 30px;
+    width: 30em;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.grid-item {
+    margin: 0.5em;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+img {
+    width: 100%;
 }

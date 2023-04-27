@@ -54,7 +54,7 @@ function onSavedMemeSelect(idx) {
 
 
 function onSetFilterBy(keyword) {
-    console.log(keyword)
+    document.querySelector('.search-meme').value = keyword
     setFilterBy(keyword)
     renderGallery()
 }

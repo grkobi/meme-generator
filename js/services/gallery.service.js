@@ -2,10 +2,10 @@
 
 let gImgs
 let gKeywordSearchCountMap = { 'funny': 11, 'cat': 9, 'baby': 5 }
-const gFilterBy = {}
+let gFilterBy = {}
 
  gImgs = [
-    { id: 1, url: 'img/1.jpg', keywords: ['trump'] },
+    { id: 1, url: 'img/1.jpg', keywords: ['trump, teeth'] },
     { id: 2, url: 'img/2.jpg', keywords: ['dogs', 'cute'] },
     { id: 3, url: 'img/3.jpg', keywords: ['baby', 'dog', 'sleep'] },
     { id: 4, url: 'img/4.jpg', keywords: ['cat', 'sleep', 'laptop'] },
@@ -53,8 +53,9 @@ const gFilterBy = {}
 function getImgs() {
     const imgs = gImgs
     if (!gFilterBy.search) return imgs
-    // let filteredImgs = gImgs.filter((img) => img.keywords.find(kw => kw.includes(gFilterBy.search)))
-    // return filteredImgs
+     let filteredImgs = gImgs.filter((img) => img.keywords.find(kw => kw.includes(gFilterBy)))
+    //  console.log('filtered images: ', filteredImgs)
+     return filteredImgs
 }
 
 function getImg(id) {
