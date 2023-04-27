@@ -8,20 +8,18 @@ function renderMeme() {
     const elCanvas = document.querySelector('canvas')
     const gCtx = elCanvas.getContext('2d')
     const elImg = new Image()
-    console.log('meme: ' , meme)
-    console.log('selected image id: ', meme.selectedImgId)
     elImg.src = `${meme.selectedImgId}`
-    console.log(elImg.src)
     //elImg.txt = meme.txt
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, elCanvas.width, elCanvas.height)
         meme.lines.forEach((line, index) => {
-            gCtx.fillStyle = line.color
-            gCtx.font = `${line.size} ${line.fontName}`
+            gCtx.fillStyle = line.fillColor
+            gCtx.strokeStyle = line.strokeColor
+            gCtx.font = `${line.size}px ${line.fontName}`
             gCtx.textAlign = line.align
             gCtx.fillText(line.txt, line.posX, line.posY)
             if (index === meme.selectedLineIdx) {
-                gCtx.lineWidth = 2;
+                gCtx.lineWidth = 1;
                 gCtx.strokeStyle = "#FF0000";
                 gCtx.strokeRect(line.posX, line.posY -20, 100, 20);//for white background
             }

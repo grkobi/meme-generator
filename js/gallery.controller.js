@@ -15,33 +15,34 @@ function renderGallery() {
 }
 
 function onImgSelect(id) {
-    // reInitMeme()
-    // chooseImg(id)
+
     const elEditorContainer = document.querySelector('.editor-container')
     const elGallery = document.querySelector('.gallery-container')
+    const elSearchMeme = document.querySelector('.search-meme')
     const elSavedMemesContainer = document.querySelector('.saved-memes-container')
+
+    elEditorContainer.style.display = 'flex'
+    elGallery.style.display = 'none'
+    elSearchMeme.style.display = 'none'
+    elSavedMemesContainer.style.display = 'none'
 
     const image = getImg(id)
     setImg(image.url)
     renderMeme()
-
-    elEditorContainer.style.display = 'flex'
-    elGallery.style.display = 'none'
-    elSavedMemesContainer.style.display = 'none'
 
 }
 
 
 function onMoveGalleryPage() {
     const elAboutContainer = document.querySelector('.about-container')
-    const elGallery = document.querySelector('.gallery')
-    const elMemesContainer = document.querySelector('.editor-container')
-    const elSavedMemesContainer = document.querySelector('.saved-memes-container')
+    const elGallery = document.querySelector('.gallery-container')
+    const elMemeContainer = document.querySelector('.editor-container')
+    // const elSavedMemesContainer = document.querySelector('.saved-memes-container')
 
-    elAboutContainer.style.display = 'none'
-    elGallery.style.display = 'none'
-    elMemesContainer.style.display = 'none'
-    elSavedMemesContainer.style.display = 'none'
+    elAboutContainer.classList.add = hidden
+    //elGallery.style.display = 'none'
+    elMemeContainer.classList.add('hidden')
+    // elSavedMemesContainer.style.display = 'none'
 
     renderGallery()
 
@@ -51,21 +52,10 @@ function onSavedMemeSelect(idx) {
     console.log('saved meme select')
 }
 
-// function chooseImg(id) {
-//     const elEditorContainer = document.querySelector('.editor-container')
-//     const elGallery = document.querySelector('.gallery-container')
-//     const elSavedMemesContainer = document.querySelector('.saved-memes-container')
-
-//     const image = getImg(id)
-//     setImg(image)
-//     renderMeme(getMeme())
-
-//     elEditorContainer.style.display = 'flex'
-//     elGallery.style.display = 'none'
-//     elSavedMemesContainer.style.display = 'none'
-// }
 
 function onSetFilterBy(keyword) {
+    console.log(keyword)
     setFilterBy(keyword)
     renderGallery()
 }
+

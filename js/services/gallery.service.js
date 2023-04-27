@@ -2,7 +2,7 @@
 
 let gImgs
 let gKeywordSearchCountMap = { 'funny': 11, 'cat': 9, 'baby': 5 }
-const gFilterBy = { search: '' }
+const gFilterBy = {}
 
  gImgs = [
     { id: 1, url: 'img/1.jpg', keywords: ['trump'] },
@@ -28,14 +28,13 @@ const gFilterBy = { search: '' }
 
 // let imagesKeywords = [
 //     ['trump','funny','face','teeth'],
-//     ['dog', 'cute', 'friendly', 'happy','bloopers'],
+//     ['dog'],
 //     ['dog', 'baby', 'friendly', 'cute', 'happy'],
-//     ['cat', 'computer', 'laptop', 'accident', 'cute'],
-//     ['achivment', 'success', 'baby', 'win'],
+//     ['cat', 'computer'],
+//     ['success', 'baby', 'win'],
 //     ['funny', 'history','aliens'],
-//     ['baby', 'surprise', 'cute','shocked'],
-//     ['funny', 'clown'],
-//     ['funny', 'laugh', 'baby', 'evil'],
+//     ['baby', 'cute','shocked'],
+//     ['funny'],
 //     ['obama', 'laugh', 'politics'],
 //     ['fight', 'basketball'],
 //     ['spooky','israeli tv'],
@@ -54,8 +53,8 @@ const gFilterBy = { search: '' }
 function getImgs() {
     const imgs = gImgs
     if (!gFilterBy.search) return imgs
-    let filteredImgs = gImgs.filter((img) => img.keywords.find(kw => kw.includes(gFilterBy.search)))
-    return filteredImgs
+    // let filteredImgs = gImgs.filter((img) => img.keywords.find(kw => kw.includes(gFilterBy.search)))
+    // return filteredImgs
 }
 
 function getImg(id) {

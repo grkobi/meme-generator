@@ -25,6 +25,21 @@
             </nav>
         </div>
     </header>
+    <section class="search-bar">
+        <input type="text" list="search-keyword" class="search-meme" oninput="onSetFilterBy(this.value)" placeholder="search your meme here">
+        <datalist id="search-keyword">
+            <option value="obama"onclick="onSetFilterBy('obama')"></option>
+            <option value="putin"></option>
+            <option value="matrix"></option>
+            <option value="baby"></option>
+            <option value="funny"></option>
+            <option value="dog"></option>
+            <option value="cat"></option>
+            <option value="laptop"></option>
+            <option value="borimor"></option>
+        </datalist>
+    </section>
+
     <section class="gallery-container">
 
 
@@ -36,18 +51,19 @@
 
     </section>
 
-    <section class="editor-container">
-    <div>
-        <input type="text" class="input-text" placeholder="Enter your text here" onkeydown="onSetLineText(this,event)">
-        <button class="line-up" onclick="onMoveUp()">↑</button>
-        <button class="line-down" onclick="onMoveDown()">↓</button>
-        <button class="add-line" onclick="onAddLine()">new line</button>
-        <button class="add-line" onclick="onDeleteLine()">delete line</button>
-        <button class="add-line" onclick="onSwitchLines()">switch line</button>
-    </div>
-    <canvas id="my-canvas" height="450" width="450"></canvas>
+    <section class="editor-container" hidden>
+        <div>
+            <input type="text" class="input-text" placeholder="Enter your text here"onkeydown="onSetLineText(this,event)">
+            <button class="line-up" onclick="onMoveUp()">↑</button>
+            <button class="line-down" onclick="onMoveDown()">↓</button>
+            <button class="add-line" onclick="onAddLine()">new line</button>
+            <button class="add-line" onclick="onDeleteLine()">delete line</button>
+            <button class="add-line" onclick="onSwitchLines()">switch line</button>
+        </div>
+        <canvas id="my-canvas" height="450" width="450"></canvas>
 
-</section>
+    </section>
+    <script src="js/services/utils.service.js"></script>
     <script src="js/services/gallery.service.js"></script>
     <script src="js/services/meme.service.js"></script>
     <script src="js/gallery.controller.js"></script>

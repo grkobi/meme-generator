@@ -51,6 +51,15 @@ nav ul li a{
     color: white;
 }
 
-/* .editor-container{
-    display:none
-} */
+.editor-container {
+    margin-top: 50px;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 1em;
+}
+
+.search-meme{
+    margin-block-end: 25px;
+}

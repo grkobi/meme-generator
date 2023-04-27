@@ -5,10 +5,11 @@ let gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'I sometimes eat Falafel',
-            size: 20,
+            txt: 'Enter your text here',
+            size: 30,
             align: 'left',
-            color: 'red',
+            fillColor: '#FFA500',
+            strokeColor: 'black',
             fontName: 'Impact',
             posX: 50,
             posY: 50
@@ -22,7 +23,6 @@ function getMeme() {
 
 function setImg(image) {
     gMeme.selectedImgId = image
-    console.log('gMeme.selectedImgId: ', gMeme.selectedImgId)
   }
 
 function setLineText(line) {
@@ -39,16 +39,17 @@ function moveDown() {
 
 function addLine() {
     const newLine = {
-        txt: 'I sometimes eat Falafel',
-        size: 20,
+        txt: 'Enter your text here',
+        size: 30,
         align: 'left',
-        color: 'red',
+        fillColor: '#FFA500',
+        strokeColor: 'black',
         fontName: 'Impact',
         posX: 50,
-        posY: 75
+        posY: 150
     }
     if (gMeme.lines.length === 0) newLine.posY = 50
-    if (gMeme.lines.length === 1) newLine.posY = 100
+    if (gMeme.lines.length === 1) newLine.posY = 350
     gMeme.lines.push(newLine)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
