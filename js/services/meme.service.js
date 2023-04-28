@@ -12,7 +12,7 @@ let gMeme = {
             strokeColor: 'black',
             fontName: 'Impact',
             posX: 50,
-            posY: 50
+            posY: 30
         }
     ]
 }
@@ -23,10 +23,14 @@ function getMeme() {
 
 function setImg(image) {
     gMeme.selectedImgId = image
-  }
+}
 
-function setLineText(line) {
-    gMeme.lines[gMeme.selectedLineIdx].txt = line
+function setLineText(line, lineIdx) {
+    gMeme.lines[lineIdx === undefined ? gMeme.selectedLineIdx : lineIdx].txt = line
+}
+
+function setLineSize(size, lineIdx) {
+    gMeme.lines[lineIdx === undefined ? gMeme.selectedLineIdx : lineIdx].size = size
 }
 
 function moveUp() {
@@ -67,4 +71,25 @@ function switchLines() {
 
 function setImgId(imgId) {
     gMeme.selectedImgId = imgId
+}
+
+function resetNumberOfLines() {
+    const newLine = {
+        txt: 'Enter your text here',
+        size: 30,
+        align: 'left',
+        fillColor: '#FFA500',
+        strokeColor: 'black',
+        fontName: 'Impact',
+        posX: 50,
+        posY: 40
+    }
+    gMeme.selectedLineIdx = 0
+    gMeme.lines = [newLine]
+}
+
+function savedMemeSelect() {
+    const memeName = prompt('Enter meme name')
+    saveToStorage(memeName, gMeme)
+    alert('Your meme has been saved!')
 }

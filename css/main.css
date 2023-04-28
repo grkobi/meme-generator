@@ -4,17 +4,21 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: lavender;
+    background-color: rgb(228, 228, 248);
     margin: 0;
     /* height: 100vh; */
     /* overflow-x: hidden; */
+}
+
+.logo-anchor{
+    padding-inline-start:1em;
+    color: white;
 }
 
 header {
     grid-template-columns: 200px 2fr 200px;
     height: 80px;
     margin-block-end: 25px;
-    background: rgb(19, 159, 172);
 }
 
 .main-layout {
@@ -28,7 +32,7 @@ header {
 
 
 nav {
-    background: rgb(19, 159, 172);
+    background: rgb(20, 72, 139);
     grid-column: 2/3;
     display: flex;
     align-items: center;
@@ -84,6 +88,12 @@ nav ul li a {
     border-radius: 15px;
 }
 
+.grid-item:hover{
+    opacity:0.5;
+}
+
 img {
-    width: 100%;
+    /* width: 100%; */
+    width: 12em;
+    background-color: yellow;
 }

@@ -11,7 +11,7 @@ let gFilterBy = {}
     { id: 4, url: 'img/4.jpg', keywords: ['cat', 'sleep', 'laptop'] },
     { id: 5, url: 'img/5.jpg', keywords: ['baby', 'success', 'win'] },
     { id: 6, url: 'img/6.jpg', keywords: ['funny', 'meme', 'aliens'] },
-    { id: 7, url: 'img/7.jpg', keywords: ['baby', 'surprise'] },
+    { id: 7, url: 'img/7.jpg', keywords: ['baby', 'surprise','shocked'] },
     { id: 8, url: 'img/8.jpg', keywords: ['funny', 'clown'] },
     { id: 9, url: 'img/9.jpg', keywords: ['baby', 'evil', 'laugh'] },
     { id: 10, url: 'img/10.jpg', keywords: ['obama', 'laugh', 'politics'] },
@@ -20,9 +20,9 @@ let gFilterBy = {}
     { id: 13, url: 'img/13.jpg', keywords: ['leonardo', 'toast', 'dicaprio'] },
     { id: 14, url: 'img/14.jpg', keywords: ['matrix', 'action','movie'] },
     { id: 15, url: 'img/15.jpg', keywords: ['boromir', 'funny', 'gondor'] },
-    { id: 16, url: 'img/16.jpg', keywords: ['star trek', 'funny'] },
+    { id: 16, url: 'img/16.jpg', keywords: ['star trek', 'funny','TV'] },
     { id: 17, url: 'img/17.jpg', keywords: ['putin', 'russia', 'politics'] },
-    { id: 18, url: 'img/18.jpg', keywords: ['toy story', 'funny'] },
+    { id: 18, url: 'img/18.jpg', keywords: ['toy story', 'funny','movie'] },
 ]
 
 
@@ -48,7 +48,6 @@ let gFilterBy = {}
 
 
 // createImgsGallery()
-// let keywords = getKeywords()
 
 function getImgs() {
     const imgs = gImgs

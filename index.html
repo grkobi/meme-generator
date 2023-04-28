@@ -13,55 +13,58 @@
     <header class="grid">
         <div class="container">
             <nav class="main-nav">
-                <h2>Meme Generator</h2>
+                <h2 class="logo"><a class="logo-anchor" href="index.html">Meme Generator</a></h2>
                 <ul class="nav-menu">
-                    <li onclick="onMoveGalleryPage()"><a class="active" href="index.html">Gallery</a></li>
+                    <li onclick="onMoveGalleryPage()"><a href="index.html">Gallery</a></li>
                     <li onclick="onRenderSavedMeme()"><a href="#">Saved Memes</a></li>
                     <li><a class="about-container" href="#">About</a></li>
-                    <!-- <li><a href="#" class="nav-link" onclick="onGalleryClick()">Gallery</a></li>
-                    <li><a href="#" class="nav-link" onclick="onSavedClick()">Saved Memes</a></li>
-                    <li><a href="#" class="nav-link" onclick="onAboutClick()">About</a></li> -->
                 </ul>
             </nav>
         </div>
     </header>
     <section class="search-bar">
-        <input list="search-keyword" class="search-meme" oninput="onSetFilterBy(this.value)" placeholder=" search your meme here">
+        <input list="search-keyword" class="search-meme" oninput="onSetFilterBy(this.value)"
+            placeholder=" search your meme here">
         <datalist id="search-keyword">
-            <option value="obama"></option>
-            <option value="trump"></option>
-            <option value="donald"></option>
-            <option value="putin"></option>
-            <option value="russia"></option>
-            <option value="matrix"></option>
-            <option value="baby"></option>
-            <option value="funny"></option>
-            <option value="dog"></option>
-            <option value="cat"></option>
-            <option value="laptop"></option>
-            <option value="boromir"></option>
-            <option value="star trek"></option>
-            <option value="toy story"></option>
-            <option value="clown"></option>
-            <option value="evil"></option>
-            <option value="naughty"></option>
+            <option value="Aliens"></option>
+            <option value="Baby"></option>
+            <option value="Boromir"></option>
+            <option value="Cat"></option>
+            <option value="Clown"></option>
+            <option value="Dog"></option>
+            <option value="Donald"></option>
+            <option value="Evil"></option>
+            <option value="Funny"></option>
+            <option value="Laptop"></option>
+            <option value="Laugh"></option>
+            <option value="Matrix"></option>
+            <option value="Movie"></option>
+            <option value="Obama"></option>
+            <option value="Politics"></option>
+            <option value="Putin"></option>
+            <option value="Russia"></option>
+            <option value="Shocked"></option>
+            <option value="Star Trek"></option>
+            <option value="Success"></option>
+            <option value="Toy Story"></option>
+            <option value="Trump"></option>
+            <option value="TV"></option>
+            <option value="Win"></option>
         </datalist>
     </section>
-
-    <section class="gallery-container">
-
-
-    </section>
+    <button class="random-meme-container" onclick="onRandomMeme()">I'm flexible</button>
+    <!-- gallery -->
+    <section class="gallery-container"></section>
 
 
-    <section class="saved-memes-container">
+    <section class="saved-memes-container"></section>
 
-
-    </section>
-
+    <!-- meme editor and canvas -->
     <section class="editor-container" hidden>
+        <button calss="save-meme" onclick="onSavedMemeSelect()">Save meme</button>
         <div>
-            <input type="text" class="input-text" placeholder="Enter your text here"onkeydown="onSetLineText(this,event)">
+            <input type="text" class="input-text" placeholder="Enter your text here"
+                onkeyup="onSetLineText(this,event)">
             <button class="line-up" onclick="onMoveUp()">↑</button>
             <button class="line-down" onclick="onMoveDown()">↓</button>
             <button class="add-line" onclick="onAddLine()">new line</button>

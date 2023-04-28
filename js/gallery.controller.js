@@ -1,5 +1,8 @@
 'use strict'
 
+const NUMBER_OF_IMAGES = 18
+const NUMBER_OF_LINES = 15
+
 function onInit() {
     renderGallery()
 }
@@ -15,7 +18,34 @@ function renderGallery() {
 }
 
 function onImgSelect(id) {
+    _hideGallery()
+    const image = getImg(id)
+    setImg(image.url)
+    renderMeme()
+}
 
+
+function onMoveGalleryPage() {
+    const elAboutContainer = document.querySelector('.about-container')
+    const elGallery = document.querySelector('.gallery-container')
+    const elMemeContainer = document.querySelector('.editor-container')
+    // const elSavedMemesContainer = document.querySelector('.saved-memes-container')
+    elAboutContainer.classList.add = hidden
+    elMemeContainer.classList.add('hidden')
+
+    renderGallery()
+
+}
+
+function onSetFilterBy(keyword) {
+    document.querySelector('.search-meme').value = keyword
+    keyword = keyword.toLowerCase()
+    setFilterBy(keyword)
+    renderGallery()
+}
+
+
+function _hideGallery() {
     const elEditorContainer = document.querySelector('.editor-container')
     const elGallery = document.querySelector('.gallery-container')
     const elSearchMeme = document.querySelector('.search-meme')
@@ -25,37 +55,16 @@ function onImgSelect(id) {
     elGallery.style.display = 'none'
     elSearchMeme.style.display = 'none'
     elSavedMemesContainer.style.display = 'none'
-
-    const image = getImg(id)
-    setImg(image.url)
-    renderMeme()
-
 }
 
-
-function onMoveGalleryPage() {
-    const elAboutContainer = document.querySelector('.about-container')
+function onRenderSavedMeme() {
+    const elEditorContainer = document.querySelector('.editor-container')
+    elEditorContainer.style.display = 'none'
     const elGallery = document.querySelector('.gallery-container')
-    const elMemeContainer = document.querySelector('.editor-container')
-    // const elSavedMemesContainer = document.querySelector('.saved-memes-container')
-
-    elAboutContainer.classList.add = hidden
-    //elGallery.style.display = 'none'
-    elMemeContainer.classList.add('hidden')
-    // elSavedMemesContainer.style.display = 'none'
-
-    renderGallery()
-
+    elGallery.style.display = 'none'
+    const memeNames = loadNamesListFromStorage()
+    let elSavedMemesContainer = document.querySelector('.saved-memes-container')
+    let strHtml = memeNames.forEach(name => {
+        elSavedMemesContainer.innerHTML +=  `<button>${name}</button>`
+    });
 }
-
-function onSavedMemeSelect(idx) {
-    console.log('saved meme select')
-}
-
-
-function onSetFilterBy(keyword) {
-    document.querySelector('.search-meme').value = keyword
-    setFilterBy(keyword)
-    renderGallery()
-}
-
