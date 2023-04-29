@@ -18,7 +18,7 @@
                 <ul class="nav-menu">
                     <li onclick="onMoveGalleryPage()" class="nav-item"><a href="index.html">Gallery</a></li>
                     <li onclick="onRenderSavedMemes()" class="nav-item"><a href="#">Memes</a></li>
-                    <li class="nav-item"><a class="about-container" href="#">About</a></li>
+                    <li onclick="onOpenAboutSection()" class="nav-item"><a href="#">About</a></li>
                 </ul>
             </nav>
             <div class="hamburger">
@@ -30,7 +30,7 @@
     </header>
     <section class="search-bar">
         <input list="search-keyword" class="search-meme" oninput="onSetFilterBy(this.value)"
-            placeholder=" search your meme here">
+            placeholder=" Search your meme here">
         <datalist id="search-keyword">
             <option value="Aliens"></option>
             <option value="Baby"></option>
@@ -38,24 +38,19 @@
             <option value="Cat"></option>
             <option value="Clown"></option>
             <option value="Dog"></option>
-            <option value="Donald"></option>
             <option value="Evil"></option>
             <option value="Funny"></option>
-            <option value="Laptop"></option>
             <option value="Laugh"></option>
             <option value="Matrix"></option>
             <option value="Movie"></option>
             <option value="Obama"></option>
             <option value="Politics"></option>
             <option value="Putin"></option>
-            <option value="Russia"></option>
             <option value="Shocked"></option>
             <option value="Star Trek"></option>
             <option value="Success"></option>
             <option value="Toy Story"></option>
             <option value="Trump"></option>
-            <option value="TV"></option>
-            <option value="Win"></option>
         </datalist>
         <span class="keywords-map">
             <button class="keyword-click" onclick="onSetFilterBy('obama')">obama</button>
@@ -92,6 +87,9 @@
         <button class="editor-btn"><a href="#" onclick="onDownloadMeme(this)" download="download-img.jpg">Download <i class="fa fa-download"></i></a></button>
         </div>
     </section>
+
+    <section class="about-container"></section>
+
     <script src="js/services/utils.service.js"></script>
     <script src="js/services/gallery.service.js"></script>
     <script src="js/services/meme.service.js"></script>

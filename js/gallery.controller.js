@@ -60,14 +60,9 @@ function _hideGallery() {
 }
 
 function onRenderSavedMemes() {
-    const elEditorContainer = document.querySelector('.editor-container')
-    elEditorContainer.style.display = 'none'
-    const elGallery = document.querySelector('.gallery-container')
-    elGallery.style.display = 'none'
-    const elFlexibleBtn = document.querySelector('.random-meme-btn')
-    elFlexibleBtn.style.display = 'none'
-    const elSearchMeme = document.querySelector('.search-meme')
-    elSearchMeme.style.display = 'none'
+    _hideGallery()
+    _hideFlexibleBtn()
+    _hideMemeEditor()
 
     const imgs = getSavedMeme()
     console.log(imgs)
@@ -82,9 +77,6 @@ function onRenderSavedMemes() {
     elSavedMemesContainer.innerHTML = strHtml.join('')
     elSavedMemesContainer.style.display = 'flex'
 
-    const elKeywordsMap = document.querySelector('.keywords-map')
-    console.log('elksdasds', elKeywordsMap)
-    elKeywordsMap.style.display = 'none'
 }
 
 function onMemeSelect(id) {
@@ -107,3 +99,17 @@ function onMemeSelect(id) {
 //     const kobi= document.querySelector(".bla").addEventListener("click", elMeme);
 //     console.log(kobi)
 // }
+
+
+function onOpenAboutSection() {
+    _hideGallery()
+    _hideMemeEditor()
+    _hideFlexibleBtn()
+    const elAboutContainer = document.querySelector('.about-container')
+    elAboutContainer.innerHTML = `<p>This page is under construction</p>`
+}
+
+function _hideFlexibleBtn() {
+    const elFlexibleBtn = document.querySelector('.random-meme-btn')
+    elFlexibleBtn.style.display = 'none'
+}

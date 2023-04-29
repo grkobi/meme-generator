@@ -110,3 +110,8 @@ function onRandomMeme() {
 function onDownloadMeme(elLink) {
     elLink.href = gElCanvas.toDataURL()
 }
+
+function _hideMemeEditor(){
+    const elMemeEditor = document.querySelector('.editor-container')
+    elMemeEditor.style.display= 'none'
+}
