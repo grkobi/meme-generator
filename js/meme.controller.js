@@ -1,8 +1,8 @@
 'use strict'
 
 const memeLines = [
-    'Eureka!', 
-    'Aliens everywhere', 
+    'Eureka!',
+    'Aliens everywhere',
     'Shocking',
     'Hilarious!',
     'Beats me',
@@ -86,12 +86,11 @@ function clearSearchBar() {
 //     savedMemeSelect()
 // }
 
-function onSaveMeme(){
+function onSaveMeme() {
     console.log('gelcanvas', gElCanvas)
     const memeURL = gElCanvas.toDataURL()
     saveMeme(memeURL)
     alert('Your meme has been saved!')
-    // flashMsg('Meme Saved at Memes .')
 }
 
 function onRandomMeme() {
@@ -106,4 +105,8 @@ function onRandomMeme() {
         setLineSize(randomLineSize, i)
     }
     onImgSelect(imageId)
+}
+
+function onDownloadMeme(elLink) {
+    elLink.href = gElCanvas.toDataURL()
 }

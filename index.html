@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Meme Generator</title>
 </head>
 
@@ -86,7 +87,10 @@
             <button class="editor-btn" onclick="onSwitchLines()">Switch line</button>
         </div>
         <canvas id="my-canvas" height="450" width="450"></canvas>
-        <button class="save-meme" onclick="onSaveMeme()">Save meme &#x1F4BE;</button>
+        <div>
+        <button class="editor-btn" onclick="onSaveMeme()">Save meme &#x1F4BE;</button>
+        <button class="editor-btn"><a href="#" onclick="onDownloadMeme(this)" download="download-img.jpg">Download <i class="fa fa-download"></i></a></button>
+        </div>
     </section>
     <script src="js/services/utils.service.js"></script>
     <script src="js/services/gallery.service.js"></script>

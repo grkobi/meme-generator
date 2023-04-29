@@ -50,11 +50,13 @@ function _hideGallery() {
     const elGallery = document.querySelector('.gallery-container')
     const elSearchMeme = document.querySelector('.search-meme')
     const elSavedMemesContainer = document.querySelector('.saved-memes-container')
+    const elKeywordsMap = document.querySelector('.keywords-map')
 
     elEditorContainer.style.display = 'flex'
     elGallery.style.display = 'none'
     elSearchMeme.style.display = 'none'
     elSavedMemesContainer.style.display = 'none'
+    elKeywordsMap.style.display = 'none'
 }
 
 function onRenderSavedMemes() {
@@ -83,7 +85,13 @@ function onRenderSavedMemes() {
     const elKeywordsMap = document.querySelector('.keywords-map')
     console.log('elksdasds', elKeywordsMap)
     elKeywordsMap.style.display = 'none'
+}
 
+function onMemeSelect(id) {
+    const elEditorContainer = document.querySelector('.editor-container')
+    elEditorContainer.style.display = 'flex'
+    getMemeFromSaved(id)
+    renderMeme()
 }
 // const memeNames = loadNamesListFromStorage()
 // let elSavedMemesContainer = document.querySelector('.saved-memes-container')
@@ -99,10 +107,3 @@ function onRenderSavedMemes() {
 //     const kobi= document.querySelector(".bla").addEventListener("click", elMeme);
 //     console.log(kobi)
 // }
-
-function onMemeSelect(id) {
-    const elEditorContainer = document.querySelector('.editor-container')
-    elEditorContainer.style.display = 'flex'
-    getMemeFromSaved(id)
-    renderMeme()
-}
