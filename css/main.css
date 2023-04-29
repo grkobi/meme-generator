@@ -168,17 +168,17 @@
         width: 30em;
     }
 
-    .random-meme-container {
+    .random-meme-btn {
         cursor: pointer;
         justify-content: center;
         border-radius: 10px;
         height: 25px;
         width: 10em;
-        margin-left:28px;
+        margin-left: 28px;
         margin-top: 25px;
         display: flex;
         align-items: center;
-        background:rgb(20, 72, 139);
+        background: rgb(20, 72, 139);
         border: 0;
         border-radius: 8px;
         box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -247,8 +247,8 @@
         margin: auto;
     }
 
-    .saved-item{
-        margin:10px 10px;
+    .saved-item {
+        margin: 10px 10px;
     }
 
     .keywords-map {
@@ -257,17 +257,17 @@
         font-size: 1em;
     }
 
-    .keyword-click{
+    .keyword-click {
         cursor: pointer;
         justify-content: center;
         border-radius: 10px;
         height: 25px;
         width: 10em;
-        margin-left:2px;
+        margin-left: 2px;
         margin-top: 2px;
         /* display: flex; */
         align-items: center;
-        background:rgb(178, 182, 119);
+        background: rgb(178, 182, 119);
         border: 0;
         border-radius: 8px;
         /* box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; */
@@ -284,4 +284,63 @@
         white-space: nowrap;
     }
 
+    .flex {
+        display: flex;
+    }
+
+    #my-canvas {
+        padding: 2vh;
+    }
+
+    .editor-btn{
+        cursor: pointer;
+        justify-content: center;
+        height: 25px;
+        width: fit-content;
+        margin-left: 2px;
+        margin-top: 2px;
+        /* display: flex; */
+        align-items: center;
+        background: rgb(224, 190, 241);
+        border: 0;
+        border-radius: 3px;
+        /* box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; */
+        /* box-sizing: border-box; */
+        color: black;
+        font-family: Phantomsans, sans-serif;
+        font-size: 12px;
+        line-height: 0.3em;
+        padding: 4px 8px;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+    }
+
+    .save-meme{
+        cursor: pointer;
+        justify-content: center;
+        height: 25px;
+        width: fit-content;
+        margin-left: 2px;
+        margin-top: 2px;
+        /* display: flex; */
+        align-items: center;
+        background: rgb(224, 190, 241);
+        border: 0;
+        border-radius: 3px;
+        /* box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; */
+        /* box-sizing: border-box; */
+        color: black;
+        font-family: Phantomsans, sans-serif;
+        font-size: 20px;
+        line-height: 0.3em;
+        padding: 4px 8px;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+    }
 }

@@ -119,8 +119,6 @@ function getSavedMeme() {
 
 function getMemeFromSaved(id) {
     const meme = gSavedMeme.find(savedMeme => savedMeme.id === id)
-    const memeToLoad = { ...meme }
-    memeToLoad.id = gIdx++
-    console.log('savedMeme', meme)
-    gMeme = memeToLoad
+    console.log('meme', meme)
+    gMeme = meme
 }

@@ -64,7 +64,7 @@
         </span>
     </section>
 
-    <button class="random-meme-container" onclick="onRandomMeme()">I'm flexible</button>
+    <button class="random-meme-btn" onclick="onRandomMeme()">I'm flexible</button>
 
     <!-- gallery -->
 
@@ -76,18 +76,17 @@
 
     <!-- meme editor and canvas -->
     <section class="editor-container" hidden>
-        <button calss="save-meme" onclick="onSaveMeme()">Save meme</button>
         <div>
             <input type="text" class="input-text" placeholder="Enter your text here"
                 onkeyup="onSetLineText(this,event)">
-            <button class="line-up" onclick="onMoveUp()">↑</button>
-            <button class="line-down" onclick="onMoveDown()">↓</button>
-            <button class="add-line" onclick="onAddLine()">new line</button>
-            <button class="add-line" onclick="onDeleteLine()">delete line</button>
-            <button class="add-line" onclick="onSwitchLines()">switch line</button>
+            <button class="editor-btn" onclick="onMoveUp()">↑</button>
+            <button class="editor-btn" onclick="onMoveDown()">↓</button>
+            <button class="editor-btn" onclick="onAddLine()">New line</button>
+            <button class="editor-btn" onclick="onDeleteLine()">Delete line</button>
+            <button class="editor-btn" onclick="onSwitchLines()">Switch line</button>
         </div>
         <canvas id="my-canvas" height="450" width="450"></canvas>
-
+        <button class="save-meme" onclick="onSaveMeme()">Save meme &#x1F4BE;</button>
     </section>
     <script src="js/services/utils.service.js"></script>
     <script src="js/services/gallery.service.js"></script>
