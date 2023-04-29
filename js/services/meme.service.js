@@ -3,6 +3,7 @@
 let gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
+    selectedImgUrl: '',
     lines: [
         {
             txt: 'Enter your text here',
@@ -26,7 +27,8 @@ function getMeme() {
 }
 
 function setImg(image) {
-    gMeme.selectedImgId = image
+    // console.log(image)
+    gMeme.selectedImgUrl = image
 }
 
 function setLineText(line, lineIdx) {
@@ -73,9 +75,9 @@ function switchLines() {
 }
 
 
-function setImgId(imgId) {
-    gMeme.selectedImgId = imgId
-}
+// function setImgId(imgId) {
+//     gMeme.selectedImgId = imgId
+// }
 
 function resetNumberOfLines() {
     const newLine = {
@@ -113,12 +115,12 @@ function saveMemeToStorage() {
 }
 
 function getSavedMeme() {
-    console.log('gsavedmeme', gSavedMeme)
+    // console.log('gsavedmeme', gSavedMeme)
     return gSavedMeme
 }
 
 function getMemeFromSaved(id) {
     const meme = gSavedMeme.find(savedMeme => savedMeme.id === id)
-    console.log('meme', meme)
+    // console.log('meme', meme)
     gMeme = meme
 }

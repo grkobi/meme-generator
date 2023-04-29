@@ -9,7 +9,7 @@ const memeLines = [
     'I\'m loving this!',
     'This is nonsense',
     'Never saw it coming',
-    'Never saw anything like this',
+    'Not sure if',
     'Hilarious!',
     'LOL!!',
     'Success!!',
@@ -25,7 +25,8 @@ function renderMeme() {
     // const gElCanvas = document.querySelector('canvas')
     const gCtx = gElCanvas.getContext('2d')
     const elImg = new Image()
-    elImg.src = `${meme.selectedImgId}`
+    elImg.src = `${meme.selectedImgUrl}`
+    console.log(meme)
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         meme.lines.forEach((line, index) => {
@@ -87,7 +88,6 @@ function clearSearchBar() {
 // }
 
 function onSaveMeme() {
-    console.log('gelcanvas', gElCanvas)
     const memeURL = gElCanvas.toDataURL()
     saveMeme(memeURL)
     flashMsg(`Meme saved`)
@@ -102,7 +102,7 @@ function onRandomMeme() {
     for (let i = 0; i < numberLines; i++) {
         const randomSentence = memeLines[getRandomIntInclusive(0, memeLines.length - 1)]
         setLineText(randomSentence, i)
-        const randomLineSize = getRandomIntInclusive(20, 38)
+        const randomLineSize = getRandomIntInclusive(17, 40)
         setLineSize(randomLineSize, i)
     }
     onImgSelect(imageId)

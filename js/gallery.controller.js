@@ -20,6 +20,7 @@ function renderGallery() {
 function onImgSelect(id) {
     _hideGallery()
     const image = getImg(id)
+    // console.log(image)
     setImg(image.url)
     renderMeme()
 }
@@ -65,7 +66,7 @@ function onRenderSavedMemes() {
     _hideMemeEditor()
 
     const imgs = getSavedMeme()
-    console.log(imgs)
+    // console.log(imgs)
 
     const strHtml = imgs.map(img => `
     <div class="saved-item">
