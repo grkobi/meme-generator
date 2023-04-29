@@ -111,7 +111,11 @@ function onDownloadMeme(elLink) {
     elLink.href = gElCanvas.toDataURL()
 }
 
-function _hideMemeEditor(){
+function onShareMeme() {
+    const memeData = gElCanvas.toDataURL()
+}
+
+function _hideMemeEditor() {
     const elMemeEditor = document.querySelector('.editor-container')
-    elMemeEditor.style.display= 'none'
+    elMemeEditor.style.display = 'none'
 }
