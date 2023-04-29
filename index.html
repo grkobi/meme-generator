@@ -81,7 +81,7 @@
             <button class="editor-btn" onclick="onDeleteLine()">Delete line</button>
             <button class="editor-btn" onclick="onSwitchLines()">Switch line</button>
         </div>
-        <canvas id="my-canvas" height="450" width="450"></canvas>
+        <canvas id="my-canvas" height="450" width="450" crossorigin="anonymous"></canvas>
         <div>
         <button class="editor-btn" onclick="onSaveMeme()">Save meme &#x1F4BE;</button>
         <button class="editor-btn"><a href="#" onclick="onDownloadMeme(this)" download="download-img.jpg">Download <i class="fa fa-download"></i></a></button>
@@ -90,6 +90,8 @@
     </section>
 
     <section class="about-container"></section>
+    
+    <div class="user-msg"></div>
 
     <script src="js/services/utils.service.js"></script>
     <script src="js/services/gallery.service.js"></script>

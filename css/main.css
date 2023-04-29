@@ -288,7 +288,7 @@
         padding: 2vh;
     }
 
-    .editor-btn{
+    .editor-btn {
         cursor: pointer;
         justify-content: center;
         height: 25px;
@@ -314,17 +314,36 @@
         white-space: nowrap;
     }
 
-    .saved-memes-container{
+    .saved-memes-container {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fill, 200px);
-        gap:15px 10px;
+        gap: 15px 10px;
     }
 
     .saved-item {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .about-container>p {
+        font-size: 20px;
+        text-shadow: #FC0 1px 0 10px;
+
+    }
+
+    .user-msg {
+        position: fixed;
+        bottom: -100px;
+        right: 10px;
+        background-color: #fc4a4a;
+        padding: 10px;
+        transition: bottom .5s;
+    }
+
+    .user-msg.open {
+        bottom: 10px;
     }
 
 }

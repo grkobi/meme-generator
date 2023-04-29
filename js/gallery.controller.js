@@ -10,7 +10,7 @@ function onInit() {
 function renderGallery() {
     let imgsGallery = getImgs()
     let strHtml = imgsGallery.map(img =>
-        `<img class="grid-item" onclick="onImgSelect(${img.id})" src="${img.url}"/>`)
+        `<img class="grid-item" onclick="onImgSelect(${img.id})" src="${img.url}" />`)
 
     const elGalleryContainer = document.querySelector('.gallery-container')
     elGalleryContainer.innerHTML = strHtml.join('')
@@ -106,7 +106,7 @@ function onOpenAboutSection() {
     _hideMemeEditor()
     _hideFlexibleBtn()
     const elAboutContainer = document.querySelector('.about-container')
-    elAboutContainer.innerHTML = `<p>This page is under construction</p>`
+    elAboutContainer.innerHTML = `<h2>About</h2><p>Create awesome looking memes with Meme Generator and share them with your friends</p>`
 }
 
 function _hideFlexibleBtn() {

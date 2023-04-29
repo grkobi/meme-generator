@@ -90,7 +90,8 @@ function onSaveMeme() {
     console.log('gelcanvas', gElCanvas)
     const memeURL = gElCanvas.toDataURL()
     saveMeme(memeURL)
-    alert('Your meme has been saved!')
+    flashMsg(`Meme saved`)
+    // alert('Your meme has been saved!')
 }
 
 function onRandomMeme() {
@@ -118,4 +119,13 @@ function onShareMeme() {
 function _hideMemeEditor() {
     const elMemeEditor = document.querySelector('.editor-container')
     elMemeEditor.style.display = 'none'
+}
+
+function flashMsg(msg) {
+    const el = document.querySelector('.user-msg')
+    el.innerText = msg
+    el.classList.add('open')
+    setTimeout(() => {
+        el.classList.remove('open')
+    }, 3000)
 }
