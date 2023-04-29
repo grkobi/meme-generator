@@ -57,14 +57,53 @@ function _hideGallery() {
     elSavedMemesContainer.style.display = 'none'
 }
 
-function onRenderSavedMeme() {
+function onRenderSavedMemes() {
     const elEditorContainer = document.querySelector('.editor-container')
     elEditorContainer.style.display = 'none'
     const elGallery = document.querySelector('.gallery-container')
     elGallery.style.display = 'none'
-    const memeNames = loadNamesListFromStorage()
-    let elSavedMemesContainer = document.querySelector('.saved-memes-container')
-    let strHtml = memeNames.forEach(name => {
-        elSavedMemesContainer.innerHTML +=  `<button>${name}</button>`
-    });
+    const elFlexibleBtn = document.querySelector('.random-meme-container')
+    elFlexibleBtn.style.display = 'none'
+    const elSearchMeme = document.querySelector('.search-meme')
+    elSearchMeme.style.display = 'none'
+    
+    const imgs = getSavedMeme()
+    console.log(imgs)
+
+    const strHtml = imgs.map(img => `
+    <div class="saved-item">
+    <img onclick="onMemeSelect('${img.id}')" src=${img.url}>
+    </div>
+    `)
+
+    const elSavedMemesContainer = document.querySelector('.saved-memes-container')
+    elSavedMemesContainer.innerHTML = strHtml.join('')
+
+    elSavedMemesContainer.style.display = 'flex'
+
+}
+    // const memeNames = loadNamesListFromStorage()
+    // let elSavedMemesContainer = document.querySelector('.saved-memes-container')
+    // // console.log(memeNames)
+    // let strHtml = memeNames.forEach(name => {
+    //     elSavedMemesContainer.innerHTML += `<button class="bla" onclick="onRenderSavedMeme(this)">${name}</button>`
+    // });
+
+
+// function onRenderSavedMeme(elMeme) {
+//     // const meme = loadFromStorage(memeName)
+//     console.log(elMeme)
+//     const kobi= document.querySelector(".bla").addEventListener("click", elMeme);
+//     console.log(kobi)
+// }
+
+function onMemeSelect(id) {
+    
+    const elEditorContainer = document.querySelector('.editor-container')
+    elEditorContainer.style.display = 'flex'
+    // document.querySelector('.editor-container').classList.remove('hidden')
+    // document.querySelector('.gallery-container').classList.add('hidden')
+    // document.querySelector('.saved-gallery-grid').classList.add('hidden')
+    getMemeFromSaved(id)
+    renderMeme()
 }

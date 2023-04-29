@@ -15,11 +15,16 @@
             <nav class="main-nav">
                 <h2 class="logo"><a class="logo-anchor" href="index.html">Meme Generator</a></h2>
                 <ul class="nav-menu">
-                    <li onclick="onMoveGalleryPage()"><a href="index.html">Gallery</a></li>
-                    <li onclick="onRenderSavedMeme()"><a href="#">Saved Memes</a></li>
-                    <li><a class="about-container" href="#">About</a></li>
+                    <li onclick="onMoveGalleryPage()" class="nav-item"><a href="index.html">Gallery</a></li>
+                    <li onclick="onRenderSavedMemes()" class="nav-item"><a href="#">Memes</a></li>
+                    <li class="nav-item"><a class="about-container" href="#">About</a></li>
                 </ul>
             </nav>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </header>
     <section class="search-bar">
@@ -61,7 +66,7 @@
 
     <!-- meme editor and canvas -->
     <section class="editor-container" hidden>
-        <button calss="save-meme" onclick="onSavedMemeSelect()">Save meme</button>
+        <button calss="save-meme" onclick="onSaveMeme()">Save meme</button>
         <div>
             <input type="text" class="input-text" placeholder="Enter your text here"
                 onkeyup="onSetLineText(this,event)">

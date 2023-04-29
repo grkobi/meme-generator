@@ -17,6 +17,10 @@ let gMeme = {
     ]
 }
 
+const STORAGE_KEY = 'memeDB'
+
+let gSavedMeme = loadFromStorage(STORAGE_KEY)
+
 function getMeme() {
     return gMeme
 }
@@ -88,8 +92,35 @@ function resetNumberOfLines() {
     gMeme.lines = [newLine]
 }
 
-function savedMemeSelect() {
-    const memeName = prompt('Enter meme name')
-    saveToStorage(memeName, gMeme)
-    alert('Your meme has been saved!')
+
+// function savedMemeSelect() {
+//     const memeName = prompt('Enter meme name')
+//     saveToStorage(memeName, gMeme)
+//     alert('Your meme has been saved!')
+// }
+
+function saveMeme(imgURL) {
+    gMeme.url = imgURL
+    const savedMeme = gMeme
+    savedMeme.id = makeId()
+    if (!gSavedMeme) gSavedMeme = []
+    gSavedMeme.push(savedMeme)
+    saveMemeToStorage()
+}
+
+function saveMemeToStorage() {
+    saveToStorage(STORAGE_KEY, gSavedMeme)
+}
+
+function getSavedMeme() {
+    console.log('gsavedmeme', gSavedMeme)
+    return gSavedMeme
+}
+
+function getMemeFromSaved(id) {
+    const meme = gSavedMeme.find(savedMeme => savedMeme.id === id)
+    const memeToLoad = { ...meme }
+    memeToLoad.id = gIdx++
+    console.log('savedMeme', meme)
+    gMeme = memeToLoad
 }

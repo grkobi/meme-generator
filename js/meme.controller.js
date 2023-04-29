@@ -1,31 +1,33 @@
 'use strict'
 
 const memeLines = [
-    'Lets go home', 
-    'What are you saying?', 
+    'Eureka!', 
+    'Aliens everywhere', 
     'Shocking',
     'Hilarious!',
     'Beats me',
-    'I am loving this',
-    'This is bullshit',
-    'I think you are wrong',
+    'I\'m loving this!',
+    'This is nonsense',
+    'Never saw it coming',
     'Never saw anything like this',
     'Hilarious!',
-    'LOL',
-    'Are you sitting?',
-    'Hold tight',
-    'Have mercy',
+    'LOL!!',
+    'Success!!',
+    'I\'m so sleepy',
+    'Have mercy!',
     'You keep using that word'
 ]
 
+const gElCanvas = document.querySelector('canvas')
+
 function renderMeme() {
     const meme = getMeme()
-    const elCanvas = document.querySelector('canvas')
-    const gCtx = elCanvas.getContext('2d')
+    // const gElCanvas = document.querySelector('canvas')
+    const gCtx = gElCanvas.getContext('2d')
     const elImg = new Image()
     elImg.src = `${meme.selectedImgId}`
     elImg.onload = () => {
-        gCtx.drawImage(elImg, 0, 0, elCanvas.width, elCanvas.height)
+        gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         meme.lines.forEach((line, index) => {
             gCtx.fillStyle = line.fillColor
             gCtx.strokeStyle = line.strokeColor
@@ -36,7 +38,7 @@ function renderMeme() {
                 gCtx.lineWidth = 1
                 let textSizes = gCtx.measureText(line.txt)
                 const actualHeight = textSizes.actualBoundingBoxAscent + textSizes.actualBoundingBoxDescent
-                gCtx.strokeStyle = "orange"
+                gCtx.strokeStyle = "black"
                 gCtx.strokeRect(line.posX, line.posY - 30, textSizes.width + 20, actualHeight + 20)
             }
         })
@@ -80,8 +82,16 @@ function clearSearchBar() {
 }
 
 
-function onSavedMemeSelect() {
-    savedMemeSelect()
+// function onSavedMemeSelect() {
+//     savedMemeSelect()
+// }
+
+function onSaveMeme(){
+    console.log('gelcanvas', gElCanvas)
+    const memeURL = gElCanvas.toDataURL()
+    saveMeme(memeURL)
+    alert('Your meme has been saved!')
+    // flashMsg('Meme Saved at Memes .')
 }
 
 function onRandomMeme() {
@@ -92,7 +102,7 @@ function onRandomMeme() {
     for (let i = 0; i < numberLines; i++) {
         const randomSentence = memeLines[getRandomIntInclusive(0, memeLines.length - 1)]
         setLineText(randomSentence, i)
-        const randomLineSize = getRandomIntInclusive(20, 40)
+        const randomLineSize = getRandomIntInclusive(20, 38)
         setLineSize(randomLineSize, i)
     }
     onImgSelect(imageId)
