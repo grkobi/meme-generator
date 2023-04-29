@@ -113,7 +113,7 @@ function onDownloadMeme(elLink) {
 }
 
 function onShareMeme() {
-    const memeData = gElCanvas.toDataURL()
+    const memeData = gElCanvas.toDataURL('image/jpeg')
 }
 
 function _hideMemeEditor() {
