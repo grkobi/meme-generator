@@ -26,9 +26,8 @@ function getMeme() {
     return gMeme
 }
 
-function setImg(image) {
-    // console.log(image)
-    gMeme.selectedImgUrl = image
+function setImg(img) {
+    gMeme.selectedImgUrl = img
 }
 
 function setLineText(line, lineIdx) {
@@ -74,11 +73,6 @@ function switchLines() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
 }
 
-
-// function setImgId(imgId) {
-//     gMeme.selectedImgId = imgId
-// }
-
 function resetNumberOfLines() {
     const newLine = {
         txt: 'Enter your text here',
@@ -94,13 +88,6 @@ function resetNumberOfLines() {
     gMeme.lines = [newLine]
 }
 
-
-// function savedMemeSelect() {
-//     const memeName = prompt('Enter meme name')
-//     saveToStorage(memeName, gMeme)
-//     alert('Your meme has been saved!')
-// }
-
 function saveMeme(imgURL) {
     gMeme.url = imgURL
     const savedMeme = gMeme
@@ -115,12 +102,18 @@ function saveMemeToStorage() {
 }
 
 function getSavedMeme() {
-    // console.log('gsavedmeme', gSavedMeme)
     return gSavedMeme
 }
 
 function getMemeFromSaved(id) {
     const meme = gSavedMeme.find(savedMeme => savedMeme.id === id)
-    // console.log('meme', meme)
     gMeme = meme
+}
+
+function increaseTxtSize() {
+    gMeme.lines[gMeme.selectedLineIdx].size += 2
+}
+
+function decreaseTxtSize() {
+    gMeme.lines[gMeme.selectedLineIdx].size -= 2
 }

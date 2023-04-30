@@ -19,9 +19,8 @@ function renderGallery() {
 
 function onImgSelect(id) {
     _hideGallery()
-    const image = getImg(id)
-    // console.log(image)
-    setImg(image.url)
+    const img = getImg(id)
+    setImg(img.url)
     renderMeme()
 }
 
