@@ -26,12 +26,8 @@ function onImgSelect(id) {
 
 
 function onMoveGalleryPage() {
-    const elAboutContainer = document.querySelector('.about-container')
-    const elGallery = document.querySelector('.gallery-container')
-    const elMemeContainer = document.querySelector('.editor-container')
-    // const elSavedMemesContainer = document.querySelector('.saved-memes-container')
-    elAboutContainer.classList.add = hidden
-    elMemeContainer.classList.add('hidden')
+    _hideMemeEditor()
+    _hideAboutPage()
 
     renderGallery()
 
@@ -63,6 +59,7 @@ function onRenderSavedMemes() {
     _hideGallery()
     _hideFlexibleBtn()
     _hideMemeEditor()
+    _hideAboutPage()
 
     const imgs = getSavedMeme()
     // console.log(imgs)
@@ -112,6 +109,11 @@ function onOpenAboutSection() {
 function _hideFlexibleBtn() {
     const elFlexibleBtn = document.querySelector('.random-meme-btn')
     elFlexibleBtn.style.display = 'none'
+}
+
+function _hideAboutPage() { 
+    const elAboutContainer = document.querySelector('.about-container')
+    elAboutContainer.style.display = 'none'
 }
 
 function toggleMenu() {
