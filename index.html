@@ -21,12 +21,23 @@
                     <li onclick="onOpenAboutSection()" class="nav-item"><a href="#">About</a></li>
                 </ul>
             </nav>
-            <div class="hamburger">
+            <!-- <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
+            </div> -->
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks">
+                <a href="#gallery" onclick="onMoveGalleryPage()" class="myLink">Gallery</a>
+                <a href="#memes" onclick="onRenderSavedMemes()" class="myLink">Memes</a>
+                <a href="#about" onclick="onOpenAboutSection()" class="myLink">About</a>
             </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="myHamburger()">
+                <i class="fa fa-bars hamburg"></i>
+            </a>
         </div>
+
     </header>
     <section class="search-bar">
         <input list="search-keyword" class="search-meme" oninput="onSetFilterBy(this.value)"
@@ -83,14 +94,16 @@
         </div>
         <canvas id="my-canvas" height="450" width="450" crossorigin="anonymous"></canvas>
         <div>
-        <button class="editor-btn" onclick="onSaveMeme()">Save meme &#x1F4BE;</button>
-        <button class="editor-btn"><a href="#" onclick="onDownloadMeme(this)" download="download-img.jpg">Download <i class="fa fa-download"></i></a></button>
-            <button class="editor-btn" onclick="onShareMeme()">Share on Facebook <a href="#" class="fa fa-facebook"></a></button>
+            <button class="editor-btn" onclick="onSaveMeme()">Save meme &#x1F4BE;</button>
+            <button class="editor-btn"><a href="#" onclick="onDownloadMeme(this)" download="download-img.jpg">Download
+                    <i class="fa fa-download"></i></a></button>
+            <button class="editor-btn" onclick="onShareMeme()">Share on Facebook <a href="#"
+                    class="fa fa-facebook"></a></button>
         </div>
     </section>
 
     <section class="about-container"></section>
-    
+
     <div class="user-msg"></div>
 
     <script src="js/services/utils.service.js"></script>

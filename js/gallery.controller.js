@@ -114,3 +114,7 @@ function _hideFlexibleBtn() {
     const elFlexibleBtn = document.querySelector('.random-meme-btn')
     elFlexibleBtn.style.display = 'none'
 }
+
+function toggleMenu() {
+    document.body.classList.toggle('menu-open');
+}

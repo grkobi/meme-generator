@@ -1,13 +1,15 @@
 'use strict'
 
+/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 
-const hamburger = document.querySelector('.hamburger')
-const navMenu = document.querySelector('.nav-menu')
-hamburger.addEventListener("click", () =>{
-    hamburger.classList.toggle('active')
-    navMenu.classList.toggle('active')
-})
-
+function myHamburger() {
+  let elMenu = document.getElementById("myLinks");
+  if (elMenu.style.display === "block") {
+    elMenu.style.display = "none";
+  } else {
+    elMenu.style.display = "block";
+  }
+}
 
 function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
